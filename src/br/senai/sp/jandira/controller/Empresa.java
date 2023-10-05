@@ -10,14 +10,15 @@ public class Empresa {
 
     public void consultaFuncionario(){
         try {
-
             /* Instanciar Conexão com Banco de Dados */
             Conexao objConexao = new Conexao();
 
-            Connection objConnection = objConexao.getConexao();
+            Connection objConnection = objConexao.getConnection();
+
+            System.out.println(objConnection);
 
             // Criar um Objeto Statement [Declaração]
-            Statement statement = objConexao.getConexao().createStatement();
+            Statement statement = objConnection.createStatement();
 
             /** Criar Query com Instruções SQL */
             String queryFuncionarios = "SELECT * FROM funcionario";

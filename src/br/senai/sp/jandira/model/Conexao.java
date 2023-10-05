@@ -1,19 +1,16 @@
 package br.senai.sp.jandira.model;
+/* Autor: ❣️🚀❣️ Vitor de Jesus ❣️🚀❣️
+   Data: 14/06/2023
+ */
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 
 public class Conexao {
+    private String servidor, banco, user, password;
+    public Connection conexao;
 
-    private String servidor;
-    private String banco;
-    private String user;
-    private String password;
-
-    private Connection conexao;
-
-    public void conexaoBanco(){
-
+    public Conexao(){
         this.servidor = "localhost";
         this.banco = "db_java";
         this.user = "root";
@@ -33,7 +30,9 @@ public class Conexao {
         }
     }
 
-    public Connection getConexao() {
+    public Connection getConnection(){
+        connectDrive();
         return conexao;
     }
+
 }
